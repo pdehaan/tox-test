@@ -106,3 +106,6 @@ ERROR: InvocationError: '/home/tox-test/.tox/flake8/bin/flake8 .'
 __________________________________________________________ summary ___________________________________________________________
 ERROR:   flake8: commands failed
 ```
+
+## Further reading
+If this wasn't poorly explained enough for you, I have a couple more [worse] examples in [The Wiki](https://github.com/pdehaan/tox-test/wiki) which cover how to install and run Node scripts via Tox.
