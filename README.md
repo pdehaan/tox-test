@@ -14,7 +14,7 @@ $ docker run -it python /bin/bash
 ```sh
 # Once inside the Docker image's shell, you can optionally install vim and any other packages.
 $ apt-get update
-$ apt-get install vim
+$ apt-get -q -y install vim
 
 # TL;DR: You can clone this crappy repo for a quick test, instead creating a bunch of sample files manually.
 $ git clone https://github.com/pdehaan/tox-test.git
