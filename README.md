@@ -71,3 +71,38 @@ ERROR:   py35: commands failed
 $ echo $?
 1
 ```
+
+If you have multiple tox environments specified in your tox.ini file, you can specify a specific environment using the `-e` flag, as seen in the following example:
+
+```sh
+$ cat tox.ini
+[tox]
+envlist = py35
+
+[testenv]
+
+[testenv:flake8]
+deps =
+  flake8
+commands = flake8 .
+
+[flake8]
+ignore = E121
+max-line-length = 160
+```
+
+```sh
+$ tox -e flake8
+
+GLOB sdist-make: /home/tox-test/setup.py
+flake8 create: /home/tox-test/.tox/flake8
+flake8 installdeps: flake8
+flake8 inst: /home/tox-test/.tox/dist/sample-1.0.0.zip
+flake8 installed: flake8==2.5.1,mccabe==0.3.1,pep8==1.5.7,pyflakes==1.0.0,sample==1.0.0,wheel==0.24.0
+flake8 runtests: PYTHONHASHSEED='387675537'
+flake8 runtests: commands[0] | flake8 .
+./test.py:3:13: E901 SyntaxError: invalid syntax
+ERROR: InvocationError: '/home/tox-test/.tox/flake8/bin/flake8 .'
+__________________________________________________________ summary ___________________________________________________________
+ERROR:   flake8: commands failed
+```
